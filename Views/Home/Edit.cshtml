@@ -1,0 +1,35 @@
+@model Dish
+<div class="text-center">
+    <h1 class="display-4">Welcome to CRUDelicious</h1>
+    <a asp-action="Index">Home</a> <a asp-action="AgregarComida">Add a dish</a>
+</div>
+<form asp-action="UpdateDish" asp-controller="Home" asp-route-DishId="@Model.DishId" method="post">
+ <div class="mb-3">
+    <label class="form-label" asp-for="@Model.Name"></label>
+    <input class="form-control"  asp-for="@Model.Name">
+    <span asp-validation-for="@Model.Name"></span>  
+  </div>
+  <div class="mb-3">
+    <label class="form-label" asp-for="@Model.Chef"></label>
+    <input class="form-control" asp-for="@Model.Chef">
+    <span asp-validation-for="@Model.Chef"></span>
+  </div>
+  <div class="mb-3">
+    <label class="form-label" asp-for="@Model.Tastiness"></label>
+    <input class="form-control" asp-for="@Model.Tastiness">
+    <span asp-validation-for="@Model.Tastiness"></span>
+  </div>
+   <div class="mb-3">
+    <label class="form-label" asp-for="@Model.Calories"></label>
+    <input class="form-control" asp-for="@Model.Calories">
+    <span asp-validation-for="@Model.Calories"></span>
+  </div>
+    <div class="mb-3">
+    <label class="form-label" asp-for="@Model.Description"></label>
+    <input class="form-control" asp-for="@Model.Description">
+    <span asp-validation-for="@Model.Description"></span>
+  </div>
+  <button type="submit" class="btn btn-primary">Editar</button>
+
+
+</form>
